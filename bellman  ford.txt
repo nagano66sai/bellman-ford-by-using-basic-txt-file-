@@ -1,4 +1,5 @@
-
+rem  using  decimal  basic
+rem  download   from  http://hp.vector.co.jp/authors/VA008683/setup.htm
 DIM  dist(7), node$(7),path$(7)
 MAT READ node$
 DATA  A,B,C,D,E,F,G
@@ -51,7 +52,7 @@ LET c(7,6)=10
 REM-----------------------------------------------------------------
 LET w=1
 DO  WHILE  w<=7
-   FOR  t=1  TO 6
+   FOR  t=1  TO 7
       FOR i=1  TO 7
        
          IF  dist(i)>dist(t)+c(t,i)  THEN
@@ -66,37 +67,13 @@ DO  WHILE  w<=7
    NEXT  t
    LET w=w+1
 LOOP  
-REM   ------------------------------
-!FOR  t=1  TO 4
-!   FOR i=5  TO  1    STEP  -1
-!    
-!      IF  dist(i)>dist(t)+c(t,i)  THEN
-!         LET dist(i)=dist(t)+c(t,i)
-!         LET path$(i)=path$(t)&node$(i)
-!      END IF
-!   NEXT  i
-!NEXT  t
-REM------------------------------------------
-!DIM  w$(9)
-!DIM  ww$(9)
-!
-!FOR  b=1  TO  7
-!   FOR  s=1  TO  LEN(path$(b))-1
-!      LET w$(b)=w$(b)&mid$(path$(b),s,1)
-!       
-!   NEXT S
-!   LET ww$(b)=w$(b)&node$(b)
-!   LET w$(b)=""
-!NEXT B
-REM-------------------------------------------
-!FOR   x=1  TO  7
-!   PRINT  "最短距離="; dist(x); ", 経路=";ww$(x)
-!NEXT x
+
+
 REM-----------------------------------
 PRINT  "-------------------------------------------------------"
 
 FOR   x=1  TO 7
-   PRINT  "最短距離="; dist(x); ", 経路=";path$(x)
+   PRINT  "distance="; dist(x); ", path=";path$(x)
 NEXT x
 
 END
